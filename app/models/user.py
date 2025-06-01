@@ -8,7 +8,7 @@ class UserRole(Enum):
 class User:
     __id_counter = 1
 
-    def __init__(self, id:str, name: str, email: str, role: UserRole, phone: str | None = None ):
+    def __init__(self, name: str, email: str, role: UserRole, phone: str | None = None ):
         self.__id = f"CMT{User.__id_counter:03d}"
         User.__id_counter += 1
         self.name=name
@@ -19,6 +19,9 @@ class User:
 
     def get_email(self)->str:
         return self.__email
+    
+    def get_user_id(self)->str:
+        return self.__id
     
     def __repr__(self):
         return f"<User {self.name} ({self.role.value})>"

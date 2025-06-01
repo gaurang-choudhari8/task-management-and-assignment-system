@@ -17,7 +17,7 @@ class Phase(Enum):
 
 class Project:
     __id_counter = 1
-    
+
     def __init__(self, title: str, phase: Phase, tasks: list[Task] | None = None, contributors: list[User] | None = None, description: str | None = None, due_date: datetime | None = None):
         self.__id = f"CMT{Project.__id_counter:03d}"
         Project.__id_counter += 1
@@ -29,7 +29,7 @@ class Project:
         self.contributors = contributors if contributors else []
         self.tasks = tasks if tasks else []
 
-    def get_id(self):
+    def get_project_id(self):
         return self.__id
 
     def __repr__(self):

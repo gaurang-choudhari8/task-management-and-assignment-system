@@ -19,7 +19,7 @@ class Type(Enum):
 
 class Task:
     __id_counter = 1
-    
+
     def __init__(self, title: str, type: Type,status: Status,owner: User,project: Project, description: str | None = None, due_date: datetime | None = None):
         self.__id = f"CMT{Task.__id_counter:03d}"
         Task.__id_counter += 1
@@ -32,7 +32,7 @@ class Task:
         self.owner = owner
         self.project = project
 
-    def get_id(self):
+    def get_task_id(self):
         return self.__id
 
     def is_overdue(self)->bool:

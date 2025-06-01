@@ -6,7 +6,7 @@ from task import Task
 class Comment:
     __id_counter = 1
 
-    def __init__(self, id: str, content: str, created_at: datetime, user: User, task: Task, upvotes: int = 0, downvotes: int = 0, reply_to: Comment | None = None):
+    def __init__(self, content: str, created_at: datetime, user: User, task: Task, upvotes: int = 0, downvotes: int = 0, reply_to: Comment | None = None):
         self.__id = f"CMT{Comment.__id_counter:03d}"
         Comment.__id_counter += 1
         self.content = content
@@ -17,7 +17,7 @@ class Comment:
         self.downvotes = downvotes
         self.reply_to = reply_to
 
-    def get_id(self):
+    def get_comment_id(self):
         return self.__id
 
 
