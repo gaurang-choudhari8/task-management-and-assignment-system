@@ -7,6 +7,12 @@ class UserRole(Enum):
 
 class User:
     __id_counter = 1
+    #Fields:-
+    #__id
+    #name
+    #__email
+    #phone
+    #role
 
     def __init__(self, name: str, email: str, role: UserRole, phone: str | None = None ):
         self.__id = f"CMT{User.__id_counter:03d}"
