@@ -12,3 +12,9 @@ class UserCreate(UserBase):
 
 class UserOut(UserBase):
     pass
+
+class UserLite(BaseModel):
+    name: str
+    role: UserRole
+
+    
